@@ -16,9 +16,14 @@ let megaFusion = cryptos.reduce((o, key, i) => Object.assign(o, {[key]: Number(v
   let keys = Object.keys(megaFusion);
   let prout = Object.values(megaFusion);
   console.log(prout);
-   keys.sort(function(a, b) {
-       return megaFusion[a] - megaFusion[b]
-   });
+
+  keys.sort(function(a, b) {
+      return megaFusion[a] - megaFusion[b]
+  }).reverse().forEach(function(k) {
+  });
+    console.log(keys);
+
+
 
   /*
 function megamin(myhash) {

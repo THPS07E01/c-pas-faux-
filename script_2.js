@@ -6,5 +6,5 @@ function factorial(answer) {
   return output;
 }
 
-let number = prompt('De quel nombre veut tu calculer la factorielle ?');
-console.log(factorial(number));
+let number = prompt('De quel nombre veux-tu calculer la factorielle ?');
+console.log(`La factorielle de ${number} est ${factorial(number)}`);
