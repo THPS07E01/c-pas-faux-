@@ -36,6 +36,7 @@ function moneysUnder6000() {
       listOfMoneysUnder6000[Object.keys(cryptosFusion)[i]] = value;
     }
   });
+  console.log('Toutes les crypto-monnaies de moins de 6000 $ :');
   console.log(listOfMoneysUnder6000);
 };
 

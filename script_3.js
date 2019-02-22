@@ -7,7 +7,6 @@ while (i <= number) {
   console.log(space.repeat((number - i )) + block.repeat(i++));
 }
 console.log(" ");
-console.log("B" + "O".repeat(number - 2) + "M");
 };
 
 pyramid()

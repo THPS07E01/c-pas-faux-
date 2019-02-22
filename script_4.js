@@ -17,22 +17,18 @@ console.log(`Il y a ${handleWithAude.length} noms qui contiennent 'Aude'.`);
 
 /* 4 */
 console.log('Combien commencent par une majuscule (première lettre juste après le @ ?');
-let handleStartWithUpper = journalists.filter(value => /[[:<:]][A-Z]/.test(value)); // Noms qui commencent par une majuscule
-console.log(`Il y a ${handleStartWithUpper.length} noms qui commencent par une majuscule.`);
-
-/* VERSION ALTERNATIVE
-  function journalist_with_maj(journalists) {
-    let regex = /[A-Z]/;
-    let journalist_with_maj = [];
-      journalists.forEach(journalist => {
-        if (journalist[1].match(regex)) {
-          journalist_with_maj.push(journalist);
-        }
-      });
-    console.log(journalist_with_maj.length);
-  };
+// Noms qui commencent par une majuscule
+function journalist_with_maj(journalists) {
+  let regex = /[A-Z]/;
+  let journalist_with_maj = [];
+  journalists.forEach(journalist => {
+    if (journalist[1].match(regex)) {
+      journalist_with_maj.push(journalist);
+    }
+  });
+  console.log(`Il y a ${journalist_with_maj.length} noms qui commencent par une majuscule.`);
+};
 journalist_with_maj(journalists)
-*/
 
 /* 5 */
 console.log('Combien contiennent une majuscule ?');
@@ -41,32 +37,32 @@ console.log(`Il y a ${handleWithUpper.length} noms qui contiennent une majuscule
 
 /* 6 */
 console.log('Combien y a-t-il de underscore dans tous les pseudos confondus ?');
-  function total_underscore(journalists) {
-    let total_underscore = 0
-    let total_test = 0
-    journalists.forEach(journalist => {
-      total_underscore += journalist.split("_").length - 1;
-// VERSION ALTERNATIVE      total_underscore += (journalist.match(/_/g)||[]).length;
-    });
-    console.log(`Il y a ${total_underscore} caractères underscore dans cette superbe liste.`);
-  };
+function total_underscore(journalists) {
+  let total_underscore = 0
+  let total_test = 0
+  journalists.forEach(journalist => {
+    total_underscore += journalist.split("_").length - 1;
+    // VERSION ALTERNATIVE      total_underscore += (journalist.match(/_/g)||[]).length;
+  });
+  console.log(`Il y a ${total_underscore} caractères underscore dans cette superbe liste.`);
+};
 total_underscore(journalists)
 
 /* 9 */
 console.log("Quelle est la position dans l'array de la personne @epenser?");
-  console.log(`Le bien tristement célèbre @epenser se situe à la position ${journalists.indexOf("@epenser")}.`);
+console.log(`Le bien tristement célèbre @epenser se situe à la position ${journalists.indexOf("@epenser")}.`);
 
 /* 7 */
 console.log('Trie la liste de handles par ordre alphabétique.');
-  function journalists_sorted(journalists) {
-    let journalists_sorted = [];
-    journalists.forEach(journalist => {
-      journalists_sorted.push(journalist.toUpperCase()); // On esquive les problèmes de casse en mettant tout en uppercase.
-    });
-    console.log(journalists_sorted.sort());
-  };
+function journalists_sorted(journalists) {
+  let journalists_sorted = [];
+  journalists.forEach(journalist => {
+    journalists_sorted.push(journalist.toUpperCase()); // On esquive les problèmes de casse en mettant tout en uppercase.
+  });
+  console.log(journalists_sorted.sort());
+};
 journalists_sorted(journalists)
 
 /* 8 */
 console.log('Quels sont les 50 handles les plus courts de cette array ?');
-  console.log(journalists.sort(function(a, b) { return a.length - b.length }).slice(0,50));
+console.log(journalists.sort(function(a, b) { return a.length - b.length }).slice(0,50));
